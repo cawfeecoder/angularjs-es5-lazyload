@@ -12,9 +12,6 @@ module.exports = {
       ],
       lazy: [
         './controllers/lazy/lazy.controller.js'
-      ],
-      js_lib: [
-        '../js-lib/jquery-3.2.1.min.js'
       ]
     },
     output: {
@@ -60,6 +57,9 @@ module.exports = {
         'process.env': {
           NODE_ENV: '"development"'
         }
+      }),
+      new webpack.ProvidePlugin({
+        "$": path.resolve("./js-lib/jquery-3.2.1.min.js")
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'node-static',
