@@ -18,7 +18,7 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'lazyCtrl',
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load('./lazy.bundle.js')
+                    return $ocLazyLoad.load('./lazy.bundle.min.js')
                 }]
             }
         })
