@@ -1,6 +1,7 @@
 import angular from 'angular';
 require('angular-route');
 require('oclazyload');
+const $ = require('../js-lib/jquery-3.2.1.min.js');
 
 var app = angular.module('app', ['ngRoute', 'oc.lazyLoad']);
 
@@ -25,6 +26,8 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.run(function ($rootScope) {
     $rootScope.$on('ocLazyLoad.moduleLoaded', function(e, module) {
-     console.log('module name : ', module);
-  });
+        console.log('module name : ', module);
+    });
+
+    $("body").append("<p> Hello from Jquery </p>");
 })

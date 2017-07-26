@@ -12,11 +12,14 @@ module.exports = {
       ],
       lazy: [
         './controllers/lazy/lazy.controller.js'
+      ],
+      js_lib: [
+        '../js-lib/jquery-3.2.1.min.js'
       ]
     },
     output: {
         path: __dirname,
-        filename: './dist/[name].bundle.js'
+        filename: './dist/[name].bundle.min.js'
     },
     resolve : {
         modules: [
